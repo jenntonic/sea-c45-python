@@ -1,45 +1,16 @@
-<!--
-Google IO 2012/2013 HTML5 Slide Template
-
-Authors: Eric Bidelman <ebidel@gmail.com>
-         Luke Mahé <lukem@google.com>
-
-URL: https://code.google.com/p/io-2012-slides
---><!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html>
-<head>
-  <title>Session Four: More Iteration, Strings, Dictionaries &mdash; Foundations 2: Python</title>
-  <meta charset="utf-8">
-  
-  <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
-  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-  <!--This one seems to work all the time, but really small on ipad-->
-  <!--<meta name="viewport" content="initial-scale=0.4">-->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-
-  <meta name="hieroglyph-title" data-config-title>
-  <meta name="hieroglyph-subtitle" data-config-subtitle>
-  <meta name="hieroglyph-presenter" data-config-presenter>
-
-  
-  <link rel="stylesheet" media="all"
-        href="_static/theme/css/default.css">
-  <link rel="stylesheet" media="all"
-        href="_static/theme/css/hieroglyph.css">
-  <link rel="stylesheet" media="only screen and (max-device-width: 480px)"
-        href="_static/theme/css/phone.css">
-
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <link rel="stylesheet" href="_static/custom.css"
-          type="text/css" />
+    <title>Session Four: More Iteration, Strings, Dictionaries &mdash; Code Fellows F2 Python, March-April 2015</title>
     
-
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
-  
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -49,58 +20,57 @@ URL: https://code.google.com/p/io-2012-slides
         HAS_SOURCE:  true
       };
     </script>
-
-    <script data-main="_static/js/slides"
-            src="_static/js/require-1.0.8.min.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    
-    <link rel="top" title="Foundations 2: Python" href="index.html" />
+    <link rel="top" title="Code Fellows F2 Python, March-April 2015" href="index.html" />
     <link rel="next" title="Session Five: Exceptions, Files, Arguments, Comprehensions" href="session05.html" />
-    <link rel="prev" title="Session Three: Sequences, Iteration and String Formatting" href="session03.html" /> 
-</head>
-<body style="opacity: 0">
+    <link rel="prev" title="Session Three: Sequences, Iteration and String Formatting" href="session03.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
 
-<slides class="layout-widescreen">
+  </head>
+  <body>
+<div class="header">
+  <div class="logo">
+    <a href="index.html">
+      <img class="logo" src="_static/cf_logo.png" alt="Logo"/>
+      <p>Code Fellows</p>
+    </a>
+  </div>
+</div>
 
-  <slide class="title-slide segue nobackground">
-  <aside class="gdbar"><img src="https://dgosxlrnzhofi.cloudfront.net/assets/logo-3fc81b216ed94ef783583de4160a97ef.svg"></aside>
-  <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
-  <hgroup class="auto-fadein">
-    <h1 data-config-title><!-- populated from slide_config.json --></h1>
-    <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
-    <p data-config-presenter><!-- populated from slide_config.json --></p>
-  </hgroup>
-</slide>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="session05.html" title="Session Five: Exceptions, Files, Arguments, Comprehensions"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="session03.html" title="Session Three: Sequences, Iteration and String Formatting"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">F2 Python</a> &raquo;</li> 
+      </ul>
+    </div>  
 
-  
-    <slide class="title-slide segue nobackground level-1" id="session-four-more-iteration-strings-dictionaries">
-    <hgroup>
-      <h1>Session Four: More Iteration, Strings, Dictionaries</h1>
-    </hgroup>
-    <article class="">
-      
-
-
-
-    </article>
-  </slide>  <slide class="level-2" id="review-questions">
-    <hgroup>
-      <h2>Review/Questions</h2>
-    </hgroup>
-    <article class="">
-      
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="review-and-extension-of-previous-class">
-    <hgroup>
-      <h3>Review and Extension of Previous Class</h3>
-    </hgroup>
-    <article class="">
-      <ul class="build simple">
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="session-four-more-iteration-strings-dictionaries">
+<h1>Session Four: More Iteration, Strings, Dictionaries<a class="headerlink" href="#session-four-more-iteration-strings-dictionaries" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="review-questions">
+<h2>Review/Questions<a class="headerlink" href="#review-questions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="review-and-extension-of-previous-class">
+<h3>Review and Extension of Previous Class<a class="headerlink" href="#review-and-extension-of-previous-class" title="Permalink to this headline">¶</a></h3>
+<ul class="build simple">
 <li>Sequences<ul>
 <li>Slicing</li>
 <li>Lists</li>
@@ -120,27 +90,7 @@ URL: https://code.google.com/p/io-2012-slides
 </ul>
 <div class="container">
 Any questions?</div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="id2">
-    <hgroup>
-      <h3>Review and Extension of Previous Class</h3>
-    </hgroup>
-    <article class="">
-      
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="id3">
-    <hgroup>
-      <h3>No Namespace</h3>
-    </hgroup>
-    <article class="">
-      <p>Be alert that a loop does not create a local namespace:</p>
+<p>Be alert that a loop does not create a local namespace:</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [172]: </span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="gp">In [173]: </span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
 <span class="gp">   .....: </span>    <span class="k">pass</span>
@@ -149,29 +99,9 @@ Any questions?</div>
 <span class="gh">Out[174]: </span><span class="go">2</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="id4">
-    <hgroup>
-      <h3>Loop Control</h3>
-    </hgroup>
-    <article class="">
-      <p>Sometimes you want to interrupt or alter the flow of control through a loop.</p>
+<p>Sometimes you want to interrupt or alter the flow of control through a loop.</p>
 <p>Loops can be controlled in two ways, with <tt class="docutils literal"><span class="pre">break</span></tt> and <tt class="docutils literal"><span class="pre">continue</span></tt></p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="id5">
-    <hgroup>
-      <h3>Break</h3>
-    </hgroup>
-    <article class="">
-      <p>The <tt class="docutils literal"><span class="pre">break</span></tt> keyword will cause a loop to immediately terminate:</p>
+<p>The <tt class="docutils literal"><span class="pre">break</span></tt> keyword will cause a loop to immediately terminate:</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [141]: </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">101</span><span class="p">):</span>
 <span class="gp">   .....: </span>    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 <span class="gp">   .....: </span>    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">:</span>
@@ -180,17 +110,7 @@ Any questions?</div>
 <span class="go">0 1 2 3 4 5... 46 47 48 49 50 51</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="id6">
-    <hgroup>
-      <h3>Continue</h3>
-    </hgroup>
-    <article class="">
-      <p>The <tt class="docutils literal"><span class="pre">continue</span></tt> keyword will skip later statements in the loop block, but
+<p>The <tt class="docutils literal"><span class="pre">continue</span></tt> keyword will skip later statements in the loop block, but
 allow iteration to continue:</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [143]: </span><span class="k">for</span> <span class="ow">in</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">101</span><span class="p">):</span>
 <span class="gp">   .....: </span>    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">:</span>
@@ -202,17 +122,7 @@ allow iteration to continue:</p>
 <span class="go">   25 26 27 28 29 ... 41 42 43 44 45 46 47 48 49 50</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="id7">
-    <hgroup>
-      <h3>Else</h3>
-    </hgroup>
-    <article class="">
-      <p>For loops can also take an optional <tt class="docutils literal"><span class="pre">else</span></tt> block.</p>
+<p>For loops can also take an optional <tt class="docutils literal"><span class="pre">else</span></tt> block.</p>
 <p>Executed only when the loop exits normally (not via break):</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [147]: </span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
 <span class="gp">   .....: </span>    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>
@@ -230,55 +140,28 @@ allow iteration to continue:</p>
 </pre></div>
 </div>
 <p>This is a really nice unique Python feature!</p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="while-loops">
-    <hgroup>
-      <h3>While Loops</h3>
-    </hgroup>
-    <article class="">
-      <p>The <tt class="docutils literal"><span class="pre">while</span></tt> keyword is for when you don't know how many loops you need.</p>
+</div>
+<div class="section" id="while-loops">
+<h3>While Loops<a class="headerlink" href="#while-loops" title="Permalink to this headline">¶</a></h3>
+<p>The <tt class="docutils literal"><span class="pre">while</span></tt> keyword is for when you don&#8217;t know how many loops you need.</p>
 <p>It continues to execute the body until condition is not <tt class="docutils literal"><span class="pre">True</span></tt>:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">while</span> <span class="n">a_condition</span><span class="p">:</span>
    <span class="n">some_code</span>
    <span class="n">in_the_body</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="id8">
-    <hgroup>
-      <h3><tt class="docutils literal"><span class="pre">while</span></tt> vs. <tt class="docutils literal"><span class="pre">for</span></tt></h3>
-    </hgroup>
-    <article class="">
-      <p><tt class="docutils literal"><span class="pre">while</span></tt>  is more general than <tt class="docutils literal"><span class="pre">for</span></tt></p>
-<p>-- you can always express <tt class="docutils literal"><span class="pre">for</span></tt> as <tt class="docutils literal"><span class="pre">while</span></tt>,</p>
+<p><tt class="docutils literal"><span class="pre">while</span></tt>  is more general than <tt class="docutils literal"><span class="pre">for</span></tt></p>
+<p>&#8211; you can always express <tt class="docutils literal"><span class="pre">for</span></tt> as <tt class="docutils literal"><span class="pre">while</span></tt>,</p>
 <p>but not always vice-versa.</p>
-<p><tt class="docutils literal"><span class="pre">while</span></tt>  is more error-prone -- requires some care to terminate</p>
+<p><tt class="docutils literal"><span class="pre">while</span></tt>  is more error-prone &#8211; requires some care to terminate</p>
 <p>loop body must make progress, so condition can become <tt class="docutils literal"><span class="pre">False</span></tt></p>
-<p>potential error -- infinite loops:</p>
+<p>potential error &#8211; infinite loops:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="id9">
-    <hgroup>
-      <h3>Terminating a while Loop</h3>
-    </hgroup>
-    <article class="">
-      <p>Use <tt class="docutils literal"><span class="pre">break</span></tt>:</p>
+<p>Use <tt class="docutils literal"><span class="pre">break</span></tt>:</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [150]: </span><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
 <span class="gp">   .....: </span>    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="gp">   .....: </span>    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
@@ -288,17 +171,7 @@ allow iteration to continue:</p>
 <span class="go">1 2 3 4 5 6 7 8 9 10</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="id10">
-    <hgroup>
-      <h3>Terminating a while Loop</h3>
-    </hgroup>
-    <article class="">
-      <p>Set a flag:</p>
+<p>Set a flag:</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [156]: </span><span class="kn">import</span> <span class="nn">random</span>
 <span class="gp">In [157]: </span><span class="n">keep_going</span> <span class="o">=</span> <span class="bp">True</span>
 <span class="gp">In [158]: </span><span class="k">while</span> <span class="n">keep_going</span><span class="p">:</span>
@@ -310,17 +183,7 @@ allow iteration to continue:</p>
 <span class="go">3</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="id11">
-    <hgroup>
-      <h3>Terminating a While Loop</h3>
-    </hgroup>
-    <article class="">
-      <p>Use a condition:</p>
+<p>Use a condition:</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [161]: </span><span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
 <span class="gp">   .....: </span>    <span class="n">i</span> <span class="o">+=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
 <span class="gp">   .....: </span>    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
@@ -328,34 +191,21 @@ allow iteration to continue:</p>
 <span class="go">0 0 2 3 4 6 8 8 8 9 12</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="similarities">
-    <hgroup>
-      <h3>Similarities</h3>
-    </hgroup>
-    <article class="">
-      <p>Both <tt class="docutils literal"><span class="pre">for</span></tt> and <tt class="docutils literal"><span class="pre">while</span></tt> loops can use <tt class="docutils literal"><span class="pre">break</span></tt> and <tt class="docutils literal"><span class="pre">continue</span></tt> for
+</div>
+<div class="section" id="similarities">
+<h3>Similarities<a class="headerlink" href="#similarities" title="Permalink to this headline">¶</a></h3>
+<p>Both <tt class="docutils literal"><span class="pre">for</span></tt> and <tt class="docutils literal"><span class="pre">while</span></tt> loops can use <tt class="docutils literal"><span class="pre">break</span></tt> and <tt class="docutils literal"><span class="pre">continue</span></tt> for
 internal flow control.</p>
 <p>Both <tt class="docutils literal"><span class="pre">for</span></tt> and <tt class="docutils literal"><span class="pre">while</span></tt> loops can have an optional <tt class="docutils literal"><span class="pre">else</span></tt> block</p>
 <p>In both loops, the statements in the <tt class="docutils literal"><span class="pre">else</span></tt> block are only executed if the
 loop terminates normally (no <tt class="docutils literal"><span class="pre">break</span></tt>)</p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-2" id="user-input">
-    <hgroup>
-      <h2>User Input</h2>
-    </hgroup>
-    <article class="">
-      <p class="left">For some of your homework, you'll need to interact with a user at the
+</div>
+</div>
+<div class="section" id="user-input">
+<h2>User Input<a class="headerlink" href="#user-input" title="Permalink to this headline">¶</a></h2>
+<p class="left">For some of your homework, you&#8217;ll need to interact with a user at the
 command line.</p>
-<p class="left">There's a nice builtin function to do this - <tt class="docutils literal"><span class="pre">input</span></tt>:</p>
+<p class="left">There&#8217;s a nice builtin function to do this - <tt class="docutils literal"><span class="pre">input</span></tt>:</p>
 <div class="left highlight-python"><div class="highlight"><pre><span class="n">In</span> <span class="p">[</span><span class="mi">196</span><span class="p">]:</span> <span class="n">fred</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">u&#39;type something--&gt;&#39;</span><span class="p">)</span>
 <span class="nb">type</span> <span class="n">something</span><span class="o">--&gt;</span><span class="p">;</span><span class="n">alksdjf</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">197</span><span class="p">]:</span> <span class="n">fred</span>
@@ -364,43 +214,21 @@ command line.</p>
 </div>
 <p class="left">This will display a prompt to the user, allowing them to input text and
 allowing you to bind that input to a symbol.</p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-2" id="pair-programming">
-    <hgroup>
-      <h2>Pair Programming</h2>
-    </hgroup>
-    <article class="">
-      <p>With a partner, write a guessing game that repeatedly asks the user
+</div>
+<div class="section" id="pair-programming">
+<h2>Pair Programming<a class="headerlink" href="#pair-programming" title="Permalink to this headline">¶</a></h2>
+<p>With a partner, write a guessing game that repeatedly asks the user
 to guess a number from 1 to 100 until they get the number correct.
-If the guess is too high, print &quot;Too high!&quot;.
-If the guess is too low, print &quot;Too low!&quot;.
-Otherwise, print &quot;Congrats! You're a winner.&quot;</p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-2" id="string-features">
-    <hgroup>
-      <h2>String Features</h2>
-    </hgroup>
-    <article class="">
-      <p class="center large">Fun with Strings</p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="manipulations">
-    <hgroup>
-      <h3>Manipulations</h3>
-    </hgroup>
-    <article class="">
-      <p><tt class="docutils literal"><span class="pre">split</span></tt> and <tt class="docutils literal"><span class="pre">join</span></tt>:</p>
+If the guess is too high, print &#8220;Too high!&#8221;.
+If the guess is too low, print &#8220;Too low!&#8221;.
+Otherwise, print &#8220;Congrats! You&#8217;re a winner.&#8221;</p>
+</div>
+<div class="section" id="string-features">
+<h2>String Features<a class="headerlink" href="#string-features" title="Permalink to this headline">¶</a></h2>
+<p class="center large">Fun with Strings</p>
+<div class="section" id="manipulations">
+<h3>Manipulations<a class="headerlink" href="#manipulations" title="Permalink to this headline">¶</a></h3>
+<p><tt class="docutils literal"><span class="pre">split</span></tt> and <tt class="docutils literal"><span class="pre">join</span></tt>:</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [167]: </span><span class="n">csv</span> <span class="o">=</span> <span class="s">&quot;comma, separated, values&quot;</span>
 <span class="gp">In [168]: </span><span class="n">csv</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;, &#39;</span><span class="p">)</span>
 <span class="gh">Out[168]: </span><span class="go">[&#39;comma&#39;, &#39;separated&#39;, &#39;values&#39;]</span>
@@ -409,17 +237,7 @@ Otherwise, print &quot;Congrats! You're a winner.&quot;</p>
 <span class="gh">Out[170]: </span><span class="go">&#39;comma|separated|values&#39;</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="id12">
-    <hgroup>
-      <h3>Case Switching</h3>
-    </hgroup>
-    <article class="">
-      <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [171]: </span><span class="n">sample</span> <span class="o">=</span> <span class="s">u&#39;A long string of words&#39;</span>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [171]: </span><span class="n">sample</span> <span class="o">=</span> <span class="s">u&#39;A long string of words&#39;</span>
 <span class="gp">In [172]: </span><span class="n">sample</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
 <span class="gh">Out[172]: </span><span class="go">u&#39;A LONG STRING OF WORDS&#39;</span>
 <span class="gp">In [173]: </span><span class="n">sample</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
@@ -430,17 +248,7 @@ Otherwise, print &quot;Congrats! You're a winner.&quot;</p>
 <span class="gh">Out[175]: </span><span class="go">u&#39;A Long String Of Words&#39;</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="id13">
-    <hgroup>
-      <h3>Testing</h3>
-    </hgroup>
-    <article class="">
-      <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [181]: </span><span class="n">number</span> <span class="o">=</span> <span class="s">u&quot;12345&quot;</span>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [181]: </span><span class="n">number</span> <span class="o">=</span> <span class="s">u&quot;12345&quot;</span>
 <span class="gp">In [182]: </span><span class="n">number</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">()</span>
 <span class="gh">Out[182]: </span><span class="go">True</span>
 <span class="gp">In [183]: </span><span class="n">number</span><span class="o">.</span><span class="n">isalnum</span><span class="p">()</span>
@@ -452,18 +260,11 @@ Otherwise, print &quot;Congrats! You're a winner.&quot;</p>
 <span class="gh">Out[186]: </span><span class="go">False</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="ordinal-values">
-    <hgroup>
-      <h3>Ordinal values</h3>
-    </hgroup>
-    <article class="">
-      <p>&quot;ASCII&quot; values: 1-127</p>
-<p>&quot;ANSI&quot; values: 1-255</p>
+</div>
+<div class="section" id="ordinal-values">
+<h3>Ordinal values<a class="headerlink" href="#ordinal-values" title="Permalink to this headline">¶</a></h3>
+<p>&#8220;ASCII&#8221; values: 1-127</p>
+<p>&#8220;ANSI&#8221; values: 1-255</p>
 <p>To get the value:</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [109]: </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="s">&#39;Chris&#39;</span><span class="p">:</span>
 <span class="gp">   .....: </span>    <span class="k">print</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s">&#39; &#39;</span><span class="p">)</span>
@@ -473,17 +274,10 @@ Otherwise, print &quot;Congrats! You're a winner.&quot;</p>
 <span class="go">C h r i s</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="building-strings">
-    <hgroup>
-      <h3>Building Strings</h3>
-    </hgroup>
-    <article class="">
-      <p>You can, but please don't do this:</p>
+</div>
+<div class="section" id="building-strings">
+<h3>Building Strings<a class="headerlink" href="#building-strings" title="Permalink to this headline">¶</a></h3>
+<p>You can, but please don&#8217;t do this:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="s">&#39;Hello &#39;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">&#39;!&#39;</span>
 </pre></div>
 </div>
@@ -491,19 +285,9 @@ Otherwise, print &quot;Congrats! You're a winner.&quot;</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="s">&#39;Hello </span><span class="si">%s</span><span class="s">!&#39;</span> <span class="o">%</span> <span class="n">name</span>
 </pre></div>
 </div>
-<p>It's much faster and safer, and easier to modify as code gets complicated.</p>
+<p>It&#8217;s much faster and safer, and easier to modify as code gets complicated.</p>
 <p><a class="reference external" href="http://docs.python.org/library/stdtypes.html#string-formatting-operations">http://docs.python.org/library/stdtypes.html#string-formatting-operations</a></p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="id14">
-    <hgroup>
-      <h3>String Formatting</h3>
-    </hgroup>
-    <article class="">
-      <p>The string format operator: <tt class="docutils literal"><span class="pre">%</span></tt></p>
+<p>The string format operator: <tt class="docutils literal"><span class="pre">%</span></tt></p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [261]: </span><span class="s">u&quot;an integer is: </span><span class="si">%i</span><span class="s">&quot;</span> <span class="o">%</span> <span class="mi">34</span>
 <span class="gh">Out[261]: </span><span class="go">u&#39;an integer is: 34&#39;</span>
 <span class="gp">In [262]: </span><span class="s">u&quot;a floating point is: </span><span class="si">%f</span><span class="s">&quot;</span> <span class="o">%</span> <span class="mf">34.5</span>
@@ -512,17 +296,7 @@ Otherwise, print &quot;Congrats! You're a winner.&quot;</p>
 <span class="gh">Out[263]: </span><span class="go">u&#39;a string is: anything&#39;</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="id15">
-    <hgroup>
-      <h3>More Placeholders</h3>
-    </hgroup>
-    <article class="">
-      <p>Multiple placeholders:</p>
+<p>Multiple placeholders:</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [264]: </span><span class="s">u&quot;the number </span><span class="si">%s</span><span class="s"> is </span><span class="si">%i</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="s">u&#39;five&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="gh">Out[264]: </span><span class="go">u&#39;the number five is 5&#39;</span>
 <span class="gp">In [266]: </span><span class="s">u&quot;the first 3 numbers are: </span><span class="si">%i</span><span class="s">, </span><span class="si">%i</span><span class="s">, </span><span class="si">%i</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
@@ -536,17 +310,7 @@ Otherwise, print &quot;Congrats! You're a winner.&quot;</p>
 <span class="ne">TypeError</span>: not enough arguments for format string
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="id16">
-    <hgroup>
-      <h3>Building Strings</h3>
-    </hgroup>
-    <article class="">
-      <p>Named placeholders:</p>
+<p>Named placeholders:</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [191]: </span><span class="s">u&quot;Hello, </span><span class="si">%(name)s</span><span class="s">, whaddaya know?&quot;</span> <span class="o">%</span> <span class="p">{</span><span class="s">u&#39;name&#39;</span><span class="p">:</span> <span class="s">&quot;Joe&quot;</span><span class="p">}</span>
 <span class="gh">Out[191]: </span><span class="go">u&#39;Hello, Joe, whaddaya know?&#39;</span>
 </pre></div>
@@ -556,36 +320,16 @@ Otherwise, print &quot;Congrats! You're a winner.&quot;</p>
 <span class="gh">Out[193]: </span><span class="go">u&#39;Hi, Bob. Howzit, Bob?&#39;</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="id17">
-    <hgroup>
-      <h3>New Formatting</h3>
-    </hgroup>
-    <article class="">
-      <p>In more recent versions of Python (2.6+) this is <a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#str.format">being phased out</a> in favor of the <tt class="docutils literal"><span class="pre">.format()</span></tt> method on strings.</p>
+<p>In more recent versions of Python (2.6+) this is <a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#str.format">being phased out</a> in favor of the <tt class="docutils literal"><span class="pre">.format()</span></tt> method on strings.</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [194]: </span><span class="s">u&quot;Hello, {}, how&#39;s your {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">u&quot;Bob&quot;</span><span class="p">,</span> <span class="s">u&quot;wife&quot;</span><span class="p">)</span>
 <span class="gh">Out[194]: </span><span class="go">u&quot;Hello, Bob, how&#39;s your wife&quot;</span>
 <span class="gp">In [195]: </span><span class="s">u&quot;Hi, {name}. How&#39;s your {relation}?&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">u&#39;Bob&#39;</span><span class="p">,</span> <span class="n">relation</span><span class="o">=</span><span class="s">u&#39;wife&#39;</span><span class="p">)</span>
 <span class="gh">Out[195]: </span><span class="go">u&quot;Hi, Bob. How&#39;s your wife?&quot;</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="id18">
-    <hgroup>
-      <h3>Complex Formatting</h3>
-    </hgroup>
-    <article class="">
-      <p>For both of these forms of string formatting, there is a complete syntax for
+<p>For both of these forms of string formatting, there is a complete syntax for
 specifying all sorts of options.</p>
-<p>It's well worth your while to spend some time getting to know this
+<p>It&#8217;s well worth your while to spend some time getting to know this
 <a class="reference external" href="https://docs.python.org/2/library/string.html#format-specification-mini-language">formatting language</a>. You can accomplish a great deal just with this.</p>
 <p>A couple other nifty utilties with for loops:</p>
 <p><strong>tuple unpacking:</strong></p>
@@ -604,17 +348,10 @@ specifying all sorts of options.</p>
 <span class="go">i:5, j:6</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="looping-through-two-loops-at-once">
-    <hgroup>
-      <h3>Looping through two loops at once:</h3>
-    </hgroup>
-    <article class="">
-      <p><strong>zip:</strong></p>
+</div>
+<div class="section" id="looping-through-two-loops-at-once">
+<h3>Looping through two loops at once:<a class="headerlink" href="#looping-through-two-loops-at-once" title="Permalink to this headline">¶</a></h3>
+<p><strong>zip:</strong></p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [10]: </span><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="gp">In [11]: </span><span class="n">l2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 <span class="gp">In [12]: </span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="n">l2</span><span class="p">):</span>
@@ -625,44 +362,27 @@ specifying all sorts of options.</p>
 <span class="go">i:3, j:5</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="homework-comments">
-    <hgroup>
-      <h3>Homework comments</h3>
-    </hgroup>
-    <article class="">
-      <p>Building up a long string.</p>
+</div>
+<div class="section" id="homework-comments">
+<h3>Homework comments<a class="headerlink" href="#homework-comments" title="Permalink to this headline">¶</a></h3>
+<p>Building up a long string.</p>
 <p>The obvious thing to do is something like:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">msg</span> <span class="o">=</span> <span class="s">u&quot;&quot;</span>
 <span class="k">for</span> <span class="n">piece</span> <span class="ow">in</span> <span class="n">list_of_stuff</span><span class="p">:</span>
     <span class="n">msg</span> <span class="o">+=</span> <span class="n">piece</span>
 </pre></div>
 </div>
-<p>But: strings are immutable -- python needs to create a new string each time you
-add a piece -- not efficient:</p>
+<p>But: strings are immutable &#8211; python needs to create a new string each time you
+add a piece &#8211; not efficient:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">msg</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">piece</span> <span class="ow">in</span> <span class="n">list_of_stuff</span><span class="p">:</span>
     <span class="n">msg</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">piece</span><span class="p">)</span>
 <span class="s">u&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>appending to lists is efficient -- and so is the join() method of strings.</p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="id19">
-    <hgroup>
-      <h3>Homework comments</h3>
-    </hgroup>
-    <article class="">
-      <p>What is <tt class="docutils literal"><span class="pre">assert</span></tt> for?</p>
-<p>Testing -- NOT for issues expected to happen operationally:</p>
+<p>appending to lists is efficient &#8211; and so is the join() method of strings.</p>
+<p>What is <tt class="docutils literal"><span class="pre">assert</span></tt> for?</p>
+<p>Testing &#8211; NOT for issues expected to happen operationally:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">assert</span> <span class="n">m</span> <span class="o">&gt;=</span> <span class="mi">0</span>
 </pre></div>
 </div>
@@ -671,29 +391,15 @@ add a piece -- not efficient:</p>
     <span class="k">raise</span> <span class="ne">ValueError</span>
 </pre></div>
 </div>
-<p>I'll cover Exceptions later this class...</p>
+<p>I&#8217;ll cover Exceptions later this class...</p>
 <p>(Asserts get ignored if optimization is turned on!)</p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-2" id="a-little-warm-up">
-    <hgroup>
-      <h2>A little warm up</h2>
-    </hgroup>
-    <article class="">
-      
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="fun-with-strings">
-    <hgroup>
-      <h3>Fun with strings</h3>
-    </hgroup>
-    <article class="">
-      <ul class="simple">
+</div>
+</div>
+<div class="section" id="a-little-warm-up">
+<h2>A little warm up<a class="headerlink" href="#a-little-warm-up" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="fun-with-strings">
+<h3>Fun with strings<a class="headerlink" href="#fun-with-strings" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
 <li>Rewrite: <tt class="docutils literal"><span class="pre">the</span> <span class="pre">first</span> <span class="pre">3</span> <span class="pre">numbers</span> <span class="pre">are:</span> <span class="pre">%i,</span> <span class="pre">%i,</span> <span class="pre">%i&quot;%(1,2,3)</span></tt><ul>
 <li>for an arbitrary number of numbers...</li>
 </ul>
@@ -701,91 +407,43 @@ add a piece -- not efficient:</p>
 <li>Write a format string that will take:<ul>
 <li><tt class="docutils literal"><span class="pre">(</span> <span class="pre">2,</span> <span class="pre">123.4567,</span> <span class="pre">10000)</span></tt></li>
 <li>and produce:</li>
-<li>`` &quot;file_002 :   123.46, 1e+04&quot; ``</li>
+<li>`` &#8220;file_002 :   123.46, 1e+04&#8221; ``</li>
 </ul>
 </li>
 </ul>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-2" id="homework-review">
-    <hgroup>
-      <h2>Homework Review</h2>
-    </hgroup>
-    <article class="">
-      <p>Someone volunteer to have their HW 8 debugged in class.</p>
+</div>
+</div>
+<div class="section" id="homework-review">
+<h2>Homework Review<a class="headerlink" href="#homework-review" title="Permalink to this headline">¶</a></h2>
+<p>Someone volunteer to have their HW 8 debugged in class.</p>
 <p>Design critique in class.</p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-2" id="today-s-puzzle-trigrams">
-    <hgroup>
-      <h2>Today's Puzzle: Trigrams</h2>
-    </hgroup>
-    <article class="">
-      <p>N-grams are a way to study word associations</p>
+</div>
+<div class="section" id="today-s-puzzle-trigrams">
+<h2>Today&#8217;s Puzzle: Trigrams<a class="headerlink" href="#today-s-puzzle-trigrams" title="Permalink to this headline">¶</a></h2>
+<p>N-grams are a way to study word associations</p>
 <p><a class="reference external" href="https://books.google.com/ngrams">https://books.google.com/ngrams</a></p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-2" id="id20">
-    <hgroup>
-      <h2>Today's Puzzle: Trigrams</h2>
-    </hgroup>
-    <article class="">
-      <ul>
+<ul>
 <li><p class="first">Coding Kata 14 - Dave Thomas</p>
 <p><a class="reference external" href="http://codekata.com/kata/kata14-tom-swift-under-the-milkwood/">http://codekata.com/kata/kata14-tom-swift-under-the-milkwood/</a></p>
 <p>and in this doc:</p>
 <p><a class="reference external" href="http://codefellows.github.io/sea-c45-python/supplements/kata_fourteen.html">http://codefellows.github.io/sea-c45-python/supplements/kata_fourteen.html</a></p>
 </li>
-<li><p class="first">Use &quot;The Travels of Marco Polo the Venetian&quot; as input:</p>
+<li><p class="first">Use &#8220;The Travels of Marco Polo the Venetian&#8221; as input:</p>
 <p><a class="reference external" href="http://codefellows.github.io/sea-c34-python/_downloads/marco-polo.txt">http://codefellows.github.io/sea-c34-python/_downloads/marco-polo.txt</a></p>
 </li>
 </ul>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-2" id="id21">
-    <hgroup>
-      <h2>Today's Puzzle: Trigrams</h2>
-    </hgroup>
-    <article class="">
-      <ul class="simple">
+<ul class="simple">
 <li>Our task today: read in the words from a large text file,
 create a dictionary of trigrams.</li>
 <li>Write pseudo code and create a design.</li>
 <li>Use dictionaries, exceptions, file reading/writing.</li>
 </ul>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-2" id="dictionaries-and-sets">
-    <hgroup>
-      <h2>Dictionaries and Sets</h2>
-    </hgroup>
-    <article class="">
-      
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="dictionary">
-    <hgroup>
-      <h3>Dictionary</h3>
-    </hgroup>
-    <article class="">
-      <p>Python calls it a <tt class="docutils literal"><span class="pre">dict</span></tt></p>
+</div>
+<div class="section" id="dictionaries-and-sets">
+<h2>Dictionaries and Sets<a class="headerlink" href="#dictionaries-and-sets" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="dictionary">
+<h3>Dictionary<a class="headerlink" href="#dictionary" title="Permalink to this headline">¶</a></h3>
+<p>Python calls it a <tt class="docutils literal"><span class="pre">dict</span></tt></p>
 <p>Other languages call it:</p>
 <ul class="simple">
 <li>dictionary</li>
@@ -795,17 +453,10 @@ create a dictionary of trigrams.</li>
 <li>hash</li>
 <li>key-value pair</li>
 </ul>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="dictionary-constructors">
-    <hgroup>
-      <h3>Dictionary Constructors</h3>
-    </hgroup>
-    <article class="">
-      <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="p">{</span><span class="s">&#39;key1&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">&#39;key2&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
+</div>
+<div class="section" id="dictionary-constructors">
+<h3>Dictionary Constructors<a class="headerlink" href="#dictionary-constructors" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="p">{</span><span class="s">&#39;key1&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">&#39;key2&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
 <span class="go">{&#39;key1&#39;: 3, &#39;key2&#39;: 5}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">dict</span><span class="p">([(</span><span class="s">&#39;key1&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">),(</span><span class="s">&#39;key2&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)])</span>
 <span class="go">{&#39;key1&#39;: 3, &#39;key2&#39;: 5}</span>
@@ -818,17 +469,10 @@ create a dictionary of trigrams.</li>
 <span class="go">{&#39;key1&#39;: 3, &#39;key2&#39;: 5}</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="dictionary-indexing">
-    <hgroup>
-      <h3>Dictionary Indexing</h3>
-    </hgroup>
-    <article class="">
-      <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;Brian&#39;</span><span class="p">,</span> <span class="s">&#39;score&#39;</span><span class="p">:</span> <span class="mi">42</span><span class="p">}</span>
+</div>
+<div class="section" id="dictionary-indexing">
+<h3>Dictionary Indexing<a class="headerlink" href="#dictionary-indexing" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;Brian&#39;</span><span class="p">,</span> <span class="s">&#39;score&#39;</span><span class="p">:</span> <span class="mi">42</span><span class="p">}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="s">&#39;score&#39;</span><span class="p">]</span>
 <span class="go">42</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s">&#39;one&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span> <span class="s">&#39;zero&#39;</span><span class="p">}</span>
@@ -840,17 +484,7 @@ create a dictionary of trigrams.</li>
 <span class="gr">KeyError</span>: <span class="n">&#39;non-existing key&#39;</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="id22">
-    <hgroup>
-      <h3>Dictionary Indexing</h3>
-    </hgroup>
-    <article class="">
-      <p>Keys can be any <strong>immutable</strong> object:</p>
+<p>Keys can be any <strong>immutable</strong> object:</p>
 <ul class="simple">
 <li>number</li>
 <li>string</li>
@@ -864,18 +498,8 @@ create a dictionary of trigrams.</li>
 <span class="go">   TypeError: unhashable type: &#39;list&#39;</span>
 </pre></div>
 </div>
-<p>Actually -- any &quot;hashable&quot; type.</p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="id23">
-    <hgroup>
-      <h3>Hashing</h3>
-    </hgroup>
-    <article class="">
-      <p>Hash functions convert arbitrarily large data to a small proxy (usually int)</p>
+<p>Actually &#8211; any &#8220;hashable&#8221; type.</p>
+<p>Hash functions convert arbitrarily large data to a small proxy (usually int)</p>
 <div class="build container">
 <p>Always return the same proxy for the same input</p>
 <p>MD5, SHA, etc</p>
@@ -888,17 +512,7 @@ bucket with very few keys (often just one)</p>
 <p>Key lookup is very efficient</p>
 <p>Same average time regardless of size</p>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="id24">
-    <hgroup>
-      <h3>Dictionary indexing</h3>
-    </hgroup>
-    <article class="">
-      <p>Note: Python name look-ups are implemented with dict -- it's highly optimized</p>
+<p>Note: Python name look-ups are implemented with dict &#8211; it&#8217;s highly optimized</p>
 <div class="build container">
 <p>Key to value:</p>
 <ul class="simple">
@@ -911,17 +525,10 @@ bucket with very few keys (often just one)</p>
 <p>If you need to check dict values often, create another dict or set</p>
 <p>(up to you to keep them in sync)</p>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="dictionary-ordering-not">
-    <hgroup>
-      <h3>Dictionary Ordering (not)</h3>
-    </hgroup>
-    <article class="">
-      <p>Dictionaries have no defined order</p>
+</div>
+<div class="section" id="dictionary-ordering-not">
+<h3>Dictionary Ordering (not)<a class="headerlink" href="#dictionary-ordering-not" title="Permalink to this headline">¶</a></h3>
+<p>Dictionaries have no defined order</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [352]: </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;one&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s">&#39;two&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s">&#39;three&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
 <span class="gp">In [353]: </span><span class="n">d</span>
 <span class="gh">Out[353]: </span><span class="go">{&#39;one&#39;: 1, &#39;three&#39;: 3, &#39;two&#39;: 2}</span>
@@ -934,17 +541,10 @@ bucket with very few keys (often just one)</p>
 can be relied on.</p>
 <p>It cannot.</p>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="dictionary-iterating">
-    <hgroup>
-      <h3>Dictionary Iterating</h3>
-    </hgroup>
-    <article class="">
-      <p><tt class="docutils literal"><span class="pre">for</span></tt>  iterates over the keys</p>
+</div>
+<div class="section" id="dictionary-iterating">
+<h3>Dictionary Iterating<a class="headerlink" href="#dictionary-iterating" title="Permalink to this headline">¶</a></h3>
+<p><tt class="docutils literal"><span class="pre">for</span></tt>  iterates over the keys</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [15]: </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;Brian&#39;</span><span class="p">,</span> <span class="s">&#39;score&#39;</span><span class="p">:</span> <span class="mi">42</span><span class="p">}</span>
 
 <span class="gp">In [16]: </span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
@@ -955,17 +555,10 @@ can be relied on.</p>
 </pre></div>
 </div>
 <p>(note the different order...)</p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="dict-keys-and-values">
-    <hgroup>
-      <h3>dict keys and values</h3>
-    </hgroup>
-    <article class="">
-      <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [20]: </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;Brian&#39;</span><span class="p">,</span> <span class="s">&#39;score&#39;</span><span class="p">:</span> <span class="mi">42</span><span class="p">}</span>
+</div>
+<div class="section" id="dict-keys-and-values">
+<h3>dict keys and values<a class="headerlink" href="#dict-keys-and-values" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [20]: </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;Brian&#39;</span><span class="p">,</span> <span class="s">&#39;score&#39;</span><span class="p">:</span> <span class="mi">42</span><span class="p">}</span>
 
 <span class="gp">In [21]: </span><span class="n">d</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
 <span class="gh">Out[21]: </span><span class="go">[&#39;score&#39;, &#39;name&#39;]</span>
@@ -977,17 +570,10 @@ can be relied on.</p>
 <span class="gh">Out[23]: </span><span class="go">[(&#39;score&#39;, 42), (&#39;name&#39;, &#39;Brian&#39;)]</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="id1">
-    <hgroup>
-      <h3>dict keys and values</h3>
-    </hgroup>
-    <article class="">
-      <p>Iterating on everything</p>
+</div>
+<div class="section" id="id1">
+<h3>dict keys and values<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Iterating on everything</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [26]: </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;Brian&#39;</span><span class="p">,</span> <span class="s">&#39;score&#39;</span><span class="p">:</span> <span class="mi">42</span><span class="p">}</span>
 
 <span class="gp">In [27]: </span><span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -997,17 +583,10 @@ can be relied on.</p>
 <span class="go">name: Brian</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="dictionary-performance">
-    <hgroup>
-      <h3>Dictionary Performance</h3>
-    </hgroup>
-    <article class="">
-      <ul class="simple">
+</div>
+<div class="section" id="dictionary-performance">
+<h3>Dictionary Performance<a class="headerlink" href="#dictionary-performance" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
 <li>indexing is fast and constant time: O(1)</li>
 <li>Membership (<tt class="docutils literal"><span class="pre">x</span> <span class="pre">in</span> <span class="pre">s</span></tt>) constant time: O(1)</li>
 <li>visiting all is proportional to n: O(n)</li>
@@ -1015,17 +594,10 @@ can be relied on.</p>
 <li>deleting is constant time: O(1)</li>
 </ul>
 <p><a class="reference external" href="http://wiki.python.org/moin/TimeComplexity">http://wiki.python.org/moin/TimeComplexity</a></p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="other-dict-operations">
-    <hgroup>
-      <h3>Other dict operations:</h3>
-    </hgroup>
-    <article class="">
-      <p>See them all here:</p>
+</div>
+<div class="section" id="other-dict-operations">
+<h3>Other dict operations:<a class="headerlink" href="#other-dict-operations" title="Permalink to this headline">¶</a></h3>
+<p>See them all here:</p>
 <p><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#mapping-types-dict">https://docs.python.org/2/library/stdtypes.html#mapping-types-dict</a></p>
 <p>Is it in there?</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [5]: </span><span class="n">d</span>
@@ -1039,17 +611,7 @@ can be relied on.</p>
 </pre></div>
 </div>
 <p>Membership is on the keys.</p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="id25">
-    <hgroup>
-      <h3>Getting Something</h3>
-    </hgroup>
-    <article class="">
-      <p>(like indexing)</p>
+<p>(like indexing)</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [9]: </span><span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;this&#39;</span><span class="p">)</span>
 <span class="gh">Out[9]: </span><span class="go">5</span>
 </pre></div>
@@ -1062,17 +624,7 @@ can be relied on.</p>
 </div>
 <p>Never raises an Exception (default default is None)</p>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="id26">
-    <hgroup>
-      <h3>Iterating</h3>
-    </hgroup>
-    <article class="">
-      <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [13]: </span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [13]: </span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
 <span class="gp">   ....: </span>    <span class="k">print</span> <span class="n">item</span>
 <span class="gp">   ....:</span>
 <span class="go">(&#39;this&#39;, 5)</span>
@@ -1089,18 +641,8 @@ can be relied on.</p>
 <span class="go">7</span>
 </pre></div>
 </div>
-<p>the <tt class="docutils literal"><span class="pre">iter*</span></tt> methods <em>don't actually create the lists</em>.</p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="id27">
-    <hgroup>
-      <h3>Popping</h3>
-    </hgroup>
-    <article class="">
-      <p>gets the value at a given key while removing it</p>
+<p>the <tt class="docutils literal"><span class="pre">iter*</span></tt> methods <em>don&#8217;t actually create the lists</em>.</p>
+<p>gets the value at a given key while removing it</p>
 <div class="build container">
 <p>Pop just a key</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [19]: </span><span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;this&#39;</span><span class="p">)</span>
@@ -1117,18 +659,8 @@ can be relied on.</p>
 </pre></div>
 </div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="id28">
-    <hgroup>
-      <h3>Handy Method</h3>
-    </hgroup>
-    <article class="">
-      <p><tt class="docutils literal"><span class="pre">setdefault(key[,</span> <span class="pre">default])</span></tt></p>
-<p>gets the value if it's there, sets it if it's not</p>
+<p><tt class="docutils literal"><span class="pre">setdefault(key[,</span> <span class="pre">default])</span></tt></p>
+<p>gets the value if it&#8217;s there, sets it if it&#8217;s not</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [26]: </span><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
 
 <span class="gp">In [27]: </span><span class="n">d</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s">u&#39;something&#39;</span><span class="p">,</span> <span class="s">u&#39;a value&#39;</span><span class="p">)</span>
@@ -1141,17 +673,7 @@ can be relied on.</p>
 <span class="gh">Out[30]: </span><span class="go">{u&#39;something&#39;: u&#39;a value&#39;}</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3" id="id29">
-    <hgroup>
-      <h3>Other dict operations:</h3>
-    </hgroup>
-    <article class="">
-      <p>dict View objects:</p>
+<p>dict View objects:</p>
 <p>Like <tt class="docutils literal"><span class="pre">keys()</span></tt>, <tt class="docutils literal"><span class="pre">values()</span></tt>, <tt class="docutils literal"><span class="pre">items()</span></tt>, but maintain a link to the original dict</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [47]: </span><span class="n">d</span>
 <span class="gh">Out[47]: </span><span class="go">{u&#39;something&#39;: u&#39;a value&#39;}</span>
@@ -1164,32 +686,98 @@ can be relied on.</p>
 <span class="gh">Out[51]: </span><span class="go">dict_items([(&#39;something else&#39;, u&#39;another value&#39;), (u&#39;something&#39;, u&#39;a value&#39;)])</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
 
 
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Session Four: More Iteration, Strings, Dictionaries</a><ul>
+<li><a class="reference internal" href="#review-questions">Review/Questions</a><ul>
+<li><a class="reference internal" href="#review-and-extension-of-previous-class">Review and Extension of Previous Class</a></li>
+<li><a class="reference internal" href="#while-loops">While Loops</a></li>
+<li><a class="reference internal" href="#similarities">Similarities</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#user-input">User Input</a></li>
+<li><a class="reference internal" href="#pair-programming">Pair Programming</a></li>
+<li><a class="reference internal" href="#string-features">String Features</a><ul>
+<li><a class="reference internal" href="#manipulations">Manipulations</a></li>
+<li><a class="reference internal" href="#ordinal-values">Ordinal values</a></li>
+<li><a class="reference internal" href="#building-strings">Building Strings</a></li>
+<li><a class="reference internal" href="#looping-through-two-loops-at-once">Looping through two loops at once:</a></li>
+<li><a class="reference internal" href="#homework-comments">Homework comments</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#a-little-warm-up">A little warm up</a><ul>
+<li><a class="reference internal" href="#fun-with-strings">Fun with strings</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#homework-review">Homework Review</a></li>
+<li><a class="reference internal" href="#today-s-puzzle-trigrams">Today&#8217;s Puzzle: Trigrams</a></li>
+<li><a class="reference internal" href="#dictionaries-and-sets">Dictionaries and Sets</a><ul>
+<li><a class="reference internal" href="#dictionary">Dictionary</a></li>
+<li><a class="reference internal" href="#dictionary-constructors">Dictionary Constructors</a></li>
+<li><a class="reference internal" href="#dictionary-indexing">Dictionary Indexing</a></li>
+<li><a class="reference internal" href="#dictionary-ordering-not">Dictionary Ordering (not)</a></li>
+<li><a class="reference internal" href="#dictionary-iterating">Dictionary Iterating</a></li>
+<li><a class="reference internal" href="#dict-keys-and-values">dict keys and values</a></li>
+<li><a class="reference internal" href="#id1">dict keys and values</a></li>
+<li><a class="reference internal" href="#dictionary-performance">Dictionary Performance</a></li>
+<li><a class="reference internal" href="#other-dict-operations">Other dict operations:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
-
-    </article>
-  </slide>
-
-
-    <slide class="thank-you-slide segue nobackground">
-    <aside class="gdbar right"><img src="https://dgosxlrnzhofi.cloudfront.net/assets/logo-3fc81b216ed94ef783583de4160a97ef.svg"></aside>
-    <article class="flexbox vleft auto-fadein">
-      <h2>&lt;Thank You!&gt;</h2>
-      <p>&nbsp;</p>
-    </article>
-    <p class="auto-fadein" data-config-contact>
-      <!-- populated from slide_config.json -->
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="session03.html"
+                        title="previous chapter">Session Three: Sequences, Iteration and String Formatting</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="session05.html"
+                        title="next chapter">Session Five: Exceptions, Files, Arguments, Comprehensions</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
     </p>
-  </slide>
-
-  <slide class="backdrop"></slide>
-
-</slides>
-
-<!--[if IE]>
-  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
-  <script>CFInstall.check({mode: 'overlay'});</script>
-<![endif]-->
-</body>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="session05.html" title="Session Five: Exceptions, Files, Arguments, Comprehensions"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="session03.html" title="Session Three: Sequences, Iteration and String Formatting"
+             >previous</a> |</li>
+        <li><a href="index.html">F2 Python</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Christopher Barker, Cris Ewing.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
 </html>
