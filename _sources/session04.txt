@@ -2,13 +2,13 @@
    Chris Barker: May 12, 2014.
 
 *******************************************************
-Session Four: Dictionaries, Sets, Exceptions, and Files
+Session Four: More Iteration, Strings, Dictionaries
 *******************************************************
 
 Review/Questions
 ================
 
-Review of Previous Classes
+Review and Extension of Previous Class
 --------------------------
 
 .. rst-class:: build
@@ -34,6 +34,372 @@ Review of Previous Classes
     Any questions?
 
 .. nextslide::
+
+.. nextslide:: No Namespace
+
+Be alert that a loop does not create a local namespace:
+
+.. code-block:: ipython
+
+    In [172]: x = 10
+    In [173]: for x in range(3):
+       .....:     pass
+       .....:
+    In [174]: x
+    Out[174]: 2
+
+
+.. nextslide:: Loop Control
+
+Sometimes you want to interrupt or alter the flow of control through a loop.
+
+Loops can be controlled in two ways, with ``break`` and ``continue``
+
+
+.. nextslide:: Break
+
+The ``break`` keyword will cause a loop to immediately terminate:
+
+.. code-block:: ipython
+
+    In [141]: for i in range(101):
+       .....:     print(i)
+       .....:     if i > 50:
+       .....:         break
+       .....:
+    0 1 2 3 4 5... 46 47 48 49 50 51
+
+.. nextslide:: Continue
+
+The ``continue`` keyword will skip later statements in the loop block, but
+allow iteration to continue:
+
+.. code-block:: ipython
+
+    In [143]: for in in range(101):
+       .....:     if i > 50:
+       .....:         break
+       .....:     if i < 25:
+       .....:         continue
+       .....:     print(i),
+       .....:
+       25 26 27 28 29 ... 41 42 43 44 45 46 47 48 49 50
+
+.. nextslide:: Else
+
+For loops can also take an optional ``else`` block.
+
+Executed only when the loop exits normally (not via break):
+
+.. code-block:: ipython
+
+    In [147]: for x in range(10):
+       .....:     if x == 11:
+       .....:         break
+       .....: else:
+       .....:     print(u'finished')
+    finished
+    In [148]: for x in range(10):
+       .....:     if x == 5:
+       .....:         print(x)
+       .....:         break
+       .....: else:
+       .....:     print(u'finished')
+    5
+
+This is a really nice unique Python feature!
+
+While Loops
+-----------
+
+The ``while`` keyword is for when you don't know how many loops you need.
+
+It continues to execute the body until condition is not ``True``::
+
+    while a_condition:
+       some_code
+       in_the_body
+
+.. nextslide:: ``while`` vs. ``for``
+
+``while``  is more general than ``for``
+
+-- you can always express ``for`` as ``while``,
+
+but not always vice-versa.
+
+``while``  is more error-prone -- requires some care to terminate
+
+loop body must make progress, so condition can become ``False``
+
+potential error -- infinite loops:
+
+.. code-block:: python
+
+    i = 0;
+    while i < 5:
+        print(i)
+
+
+.. nextslide:: Terminating a while Loop
+
+Use ``break``:
+
+.. code-block:: ipython
+
+    In [150]: while True:
+       .....:     i += 1
+       .....:     if i > 10:
+       .....:         break
+       .....:     print(i, end=' ')
+       .....:
+    1 2 3 4 5 6 7 8 9 10
+
+.. nextslide:: Terminating a while Loop
+
+Set a flag:
+
+.. code-block:: ipython
+
+    In [156]: import random
+    In [157]: keep_going = True
+    In [158]: while keep_going:
+       .....:     num = random.choice(range(5))
+       .....:     print(num)
+       .....:     if num == 3:
+       .....:         keep_going = False
+       .....:
+    3
+
+.. nextslide:: Terminating a While Loop
+
+Use a condition:
+
+.. code-block:: ipython
+
+    In [161]: while i < 10:
+       .....:     i += random.choice(range(4))
+       .....:     print(i)
+       .....:
+    0 0 2 3 4 6 8 8 8 9 12
+
+
+Similarities
+------------
+
+Both ``for`` and ``while`` loops can use ``break`` and ``continue`` for
+internal flow control.
+
+Both ``for`` and ``while`` loops can have an optional ``else`` block
+
+In both loops, the statements in the ``else`` block are only executed if the
+loop terminates normally (no ``break``)
+
+
+User Input
+==============
+
+.. rst-class:: left
+
+For some of your homework, you'll need to interact with a user at the
+command line.
+
+.. rst-class:: left
+
+There's a nice builtin function to do this - ``input``:
+
+.. rst-class:: left
+
+.. code-block:: python
+
+    In [196]: fred = raw_input(u'type something-->')
+    type something-->;alksdjf
+    In [197]: fred
+    Out[197]: ';alksdjf'
+
+.. rst-class:: left
+
+This will display a prompt to the user, allowing them to input text and
+allowing you to bind that input to a symbol.
+
+Pair Programming
+================
+
+With a partner, write a guessing game that repeatedly asks the user
+to guess a number from 1 to 100 until they get the number correct.
+If the guess is too high, print "Too high!".
+If the guess is too low, print "Too low!".
+Otherwise, print "Congrats! You're a winner."
+
+
+String Features
+=================
+
+.. rst-class:: center large
+
+  Fun with Strings
+
+
+Manipulations
+-------------
+
+``split`` and ``join``:
+
+.. code-block:: ipython
+
+    In [167]: csv = "comma, separated, values"
+    In [168]: csv.split(', ')
+    Out[168]: ['comma', 'separated', 'values']
+    In [169]: psv = '|'.join(csv.split(', '))
+    In [170]: psv
+    Out[170]: 'comma|separated|values'
+
+
+.. nextslide:: Case Switching
+
+.. code-block:: ipython
+
+    In [171]: sample = u'A long string of words'
+    In [172]: sample.upper()
+    Out[172]: u'A LONG STRING OF WORDS'
+    In [173]: sample.lower()
+    Out[173]: u'a long string of words'
+    In [174]: sample.swapcase()
+    Out[174]: u'a LONG STRING OF WORDS'
+    In [175]: sample.title()
+    Out[175]: u'A Long String Of Words'
+
+
+.. nextslide:: Testing
+
+.. code-block:: ipython
+
+    In [181]: number = u"12345"
+    In [182]: number.isnumeric()
+    Out[182]: True
+    In [183]: number.isalnum()
+    Out[183]: True
+    In [184]: number.isalpha()
+    Out[184]: False
+    In [185]: fancy = u"Th!$ $tr!ng h@$ $ymb0l$"
+    In [186]: fancy.isalnum()
+    Out[186]: False
+
+
+Ordinal values
+--------------
+
+"ASCII" values: 1-127
+
+"ANSI" values: 1-255
+
+To get the value:
+
+.. code-block:: ipython
+
+    In [109]: for i in 'Chris':
+       .....:     print(ord(i), end=' ')
+    67 104 114 105 115
+    In [110]: for i in (67,104,114,105,115):
+       .....:     print(chr(i), end=' ')
+    C h r i s
+
+
+Building Strings
+----------------
+
+You can, but please don't do this:
+
+.. code-block:: python
+
+    'Hello ' + name + '!'
+
+Do this instead:
+
+.. code-block:: python
+
+    'Hello %s!' % name
+
+It's much faster and safer, and easier to modify as code gets complicated.
+
+http://docs.python.org/library/stdtypes.html#string-formatting-operations
+
+
+.. nextslide:: String Formatting
+
+The string format operator: ``%``
+
+.. code-block:: ipython
+
+    In [261]: u"an integer is: %i" % 34
+    Out[261]: u'an integer is: 34'
+    In [262]: u"a floating point is: %f" % 34.5
+    Out[262]: u'a floating point is: 34.500000'
+    In [263]: u"a string is: %s" % u"anything"
+    Out[263]: u'a string is: anything'
+
+.. nextslide:: More Placeholders
+
+Multiple placeholders:
+
+.. code-block:: ipython
+
+    In [264]: u"the number %s is %i" % (u'five', 5)
+    Out[264]: u'the number five is 5'
+    In [266]: u"the first 3 numbers are: %i, %i, %i" % (1,2,3)
+    Out[266]: u'the first 3 numbers are: 1, 2, 3'
+
+The counts must agree:
+
+.. code-block:: ipython
+
+    In [187]: u"string with %i formatting %s" % (1, )
+    ---------------------------------------------------------------------------
+    ...
+    TypeError: not enough arguments for format string
+
+
+.. nextslide::
+
+Named placeholders:
+
+.. code-block:: ipython
+
+    In [191]: u"Hello, %(name)s, whaddaya know?" % {u'name': "Joe"}
+    Out[191]: u'Hello, Joe, whaddaya know?'
+
+You can use values more than once, and skip values:
+
+.. code-block:: ipython
+
+    In [193]: u"Hi, %(name)s. Howzit, %(name)s?" % {u'name': u"Bob", u'age': 27}
+    Out[193]: u'Hi, Bob. Howzit, Bob?'
+
+
+.. nextslide:: New Formatting
+
+In more recent versions of Python (2.6+) this is `being phased out`_ in favor of the ``.format()`` method on strings.
+
+.. code-block:: ipython
+
+    In [194]: u"Hello, {}, how's your {}".format(u"Bob", u"wife")
+    Out[194]: u"Hello, Bob, how's your wife"
+    In [195]: u"Hi, {name}. How's your {relation}?".format(name=u'Bob', relation=u'wife')
+    Out[195]: u"Hi, Bob. How's your wife?"
+
+
+.. nextslide:: Complex Formatting
+
+For both of these forms of string formatting, there is a complete syntax for
+specifying all sorts of options.
+
+It's well worth your while to spend some time getting to know this
+`formatting language`_. You can accomplish a great deal just with this.
+
+.. _formatting language: https://docs.python.org/2/library/string.html#format-specification-mini-language
+
+.. _being phased out: https://docs.python.org/2/library/stdtypes.html#str.format
+
 
 A couple other nifty utilties with for loops:
 
@@ -136,20 +502,10 @@ Fun with strings
 Homework Review
 ======================
 
-Someone volunteer to have their homeworks
-(Task 6 and 7) debugged in-class.
+Someone volunteer to have their HW 8 debugged in class.
 
-Free programming help!
+Design critique in class.
 
-Prepare your Questions
-======================
-
-Open up your task 7 files in your text editor.
-
-* dictionaries.py
-* exceptions.py
-* paths.py
-* files.py
 
 Today's Puzzle: Trigrams
 ========================
@@ -166,7 +522,7 @@ https://books.google.com/ngrams
 
   and in this doc:
 
-  http://codefellows.github.io/sea-c34-python/supplements/kata_fourteen.html
+  http://codefellows.github.io/sea-c45-python/supplements/kata_fourteen.html
 
 * Use "The Travels of Marco Polo the Venetian" as input:
 
@@ -182,13 +538,6 @@ https://books.google.com/ngrams
 * Use dictionaries, exceptions, file reading/writing.
 
 
-Announcements
-=====================
-
-* Enter your attendance in Canvas.
-* When are office hours?
-* Tell us when you prefer TA office hours
-* Collaboration is okay, but not copying.
 
 Dictionaries and Sets
 =====================
@@ -447,7 +796,7 @@ Membership is on the keys.
 
   In [13]: for item in d.iteritems():
      ....:     print item
-     ....:     
+     ....:
   ('this', 5)
   ('that', 7)
   In [15]: for key in d.iterkeys():
@@ -524,762 +873,3 @@ Like ``keys()``, ``values()``, ``items()``, but maintain a link to the original 
 
   In [51]: item_view
   Out[51]: dict_items([('something else', u'another value'), (u'something', u'a value')])
-
-Sets
-----
-
-A ``set``  is an unordered collection of distinct values
-
-Essentially a dict with only keys
-
-Set Constructors
-
-.. code-block:: ipython
-
-    >>> set()
-    set([])
-
-    >>> set([1, 2, 3])
-    set([1, 2, 3])
-
-    >>> {1, 2, 3}
-    set([1, 2, 3])
-
-    >>> s = set()
-
-    >>> s.update([1, 2, 3])
-    >>> s
-    set([1, 2, 3])
-
-
-Set Properties
----------------
-
-``Set``  members must be hashable
-
-.. rst-class:: build
-.. container::
-
-    Like dictionary keys -- and for same reason (efficient lookup)
-
-    No indexing (unordered)
-
-    .. code-block:: ipython
-
-        >>> s[1]
-        Traceback (most recent call last):
-          File "<stdin>", line 1, in <module>
-        TypeError: 'set' object does not support indexing
-
-
-Set Methods
------------
-
-.. code-block:: ipython
-
-    >>> s = set([1])
-    >>> s.pop() # an arbitrary member
-    1
-    >>> s.pop()
-    Traceback (most recent call last):
-      File "<stdin>", line 1, in <module>
-    KeyError: 'pop from an empty set'
-    >>> s = set([1, 2, 3])
-    >>> s.remove(2)
-    >>> s.remove(2)
-    Traceback (most recent call last):
-      File "<stdin>", line 1, in <module>
-    KeyError: 2
-
-.. nextslide::
-
-All the "set" operations from math class...
-
-.. code-block:: python
-
-    s.isdisjoint(other)
-
-    s.issubset(other)
-    
-    s.union(other, ...)
-    
-    s.intersection(other, ...)
-    
-    s.difference(other, ...)
-    
-    s.symmetric_difference( other, ...)
-
-Frozen Set
-----------
-
-Another kind of set: ``frozenset``
-
-immutable -- for use as a key in a dict
-(or another set...)
-
-.. code-block:: python
-
-    >>> fs = frozenset((3,8,5))
-    >>> fs.add(9)
-    Traceback (most recent call last):
-      File "<stdin>", line 1, in <module>
-    AttributeError: 'frozenset' object has no attribute 'add'
-
-
-Exceptions
-==========
-
-.. rst-class:: left
-.. container::
-
-    Another Branching structure:
-
-    .. code-block:: python
-
-        try:
-            do_something()
-            f = open('missing.txt')
-            process(f)   # never called if file missing
-        except IOError:
-            print "couldn't open missing.txt"
-
-Exceptions
-----------
-
-Never Do this:
-
-.. code-block:: python
-
-    try:
-        do_something()
-        f = open('missing.txt')
-        process(f)   # never called if file missing
-    except:
-        print "couldn't open missing.txt"
-
-
-Exceptions
-----------
-
-Use Exceptions, rather than your own tests:
-
-Don't do this:
-
-.. code-block:: python
-
-    do_something()
-    if os.path.exists('missing.txt'):
-        f = open('missing.txt')
-        process(f)   # never called if file missing
-
-It will almost always work -- but the almost will drive you crazy
-
-.. nextslide::
-
-Example from homework
-
-.. code-block:: python
-
-    if num_in.isdigit():
-        num_in = int(num_in)
-
-but -- ``int(num_in)`` will only work if the string can be converted to an integer.
-
-So you can do
-
-.. code-block:: python
-
-    try:
-        num_in = int(num_in)
-    except ValueError:
-        print(u"Input must be an integer, try again.")
-
-Or let the Exception be raised....
-
-
-.. nextslide:: EAFP
-
-::
-
-    "it's Easier to Ask Forgiveness than Permission"
-
-    -- Grace Hopper
-
-http://www.youtube.com/watch?v=AZDWveIdqjY
-
-(Pycon talk by Alex Martelli)
-
-.. nextslide:: Do you catch all Exceptions?
-
-For simple scripts, let exceptions happen.
-
-Only handle the exception if the code can and will do something about it.
-
-(much better debugging info when an error does occur)
-
-
-Exceptions -- finally
----------------------
-
-.. code-block:: python
-
-    try:
-        do_something()
-        f = open('missing.txt')
-        process(f)   # never called if file missing
-    except IOError:
-        print(u"couldn't open missing.txt")
-    finally:
-        do_some_clean-up
-
-The ``finally:``  clause will always run
-
-
-Exceptions -- else
--------------------
-
-.. code-block:: python
-
-    try:
-        do_something()
-        f = open('missing.txt')
-    except IOError:
-        print(u"couldn't open missing.txt")
-    else:
-        process(f) # only called if there was no exception
-
-Advantage:
-  you know where the Exception came from
-
-Exceptions -- using them
-------------------------
-
-.. code-block:: python
-
-    try:
-        do_something()
-        f = open('missing.txt')
-    except IOError as the_error:
-        print the_error
-        the_error.extra_info = "some more information"
-        raise
-
-.. rst-class:: build
-.. container::
-
-    Particularly useful if you catch more than one exception:
-
-    .. code-block:: python
-
-        except (IOError, BufferError, OSError) as the_error:
-            do_something_with (the_error)
-
-
-Raising Exceptions
-------------------
-
-.. code-block:: python
-
-    def divide(a,b):
-        if b == 0:
-            raise ZeroDivisionError("b can not be zero")
-        else:
-            return a / b
-
-.. rst-class:: build
-.. container::
-
-    when you call it:
-
-    .. code-block:: ipython
-
-        In [515]: divide (12,0)
-        ZeroDivisionError: b can not be zero
-
-
-Built in Exceptions
--------------------
-
-You can create your own custom exceptions, but...
-
-.. rst-class:: build
-.. container::
-
-    .. code-block:: python
-
-        exp = [name for name in dir(__builtin__) if "Error" in name]
-        len(exp)
-        32
-
-    For the most part, you can/should use a built in one
-
-.. nextslide::
-
-Choose the best match you can for the built in Exception you raise.
-
-.. rst-class:: build
-.. container::
-
-    Example (for last week's ackerman homework)::
-
-        if (not isinstance(m, int)) or (not isinstance(n, int)):
-            raise ValueError
-
-    Is the *value* of the input the problem here?
-
-    Nope: the *type* is the problem::
-
-        if (not isinstance(m, int)) or (not isinstance(n, int)):
-            raise TypeError
-
-    but should you be checking type anyway? (EAFP)
-
-
-File Reading and Writing
-========================
-
-Files
------
-
-Text Files
-
-.. code-block:: python
-
-    import io
-    f = io.open('secrets.txt', encoding='utf-8')
-    secret_data = f.read()
-    f.close()
-
-``secret_data`` is a (unicode) string
-
-``encoding`` defaults to ``sys.getdefaultencoding()`` -- often NOT what you
-want.
-
-(There is also the regular ``open()`` built in, but it won't handle Unicode for
-you...)
-
-.. nextslide::
-
-Binary Files
-
-.. code-block:: python
-
-    f = io.open('secrets.bin', 'rb')
-    secret_data = f.read()
-    f.close()
-
-``secret_data``  is a byte string
-
-(with arbitrary bytes in it -- well, not arbitrary -- whatever is in the file.)
-
-(See the ``struct``  module to unpack formatted binary data)
-
-
-.. nextslide::
-
-File Opening Modes
-
-.. code-block:: python
-
-    f = io.open('secrets.txt', [mode])
-    'r', 'w', 'a'
-    'rb', 'wb', 'ab'
-    r+, w+, a+
-    r+b, w+b, a+b
-    U
-    U+
-
-These follow the Unix conventions, and aren't all that well documented on the
-Python docs. But these BSD docs make it pretty clear:
-
-http://www.manpagez.com/man/3/fopen/
-
-**Gotcha** -- 'w' modes always clear the file
-
-.. nextslide:: Text File Notes
-
-Text is default
-
-* Newlines are translated: ``\r\n -> \n``
-*   -- reading and writing!
-* Use \*nix-style in your code: ``\n``
-* ``io.open()`` returns various "stream" objects -- but they act like file
-  objects.
-* In text mode, io.open() defaults to "Universal" newline mode.
-
-
-Gotcha:
-
-* no difference between text and binary on \*nix
-* breaks on Windows
-
-
-.. nextslide:: Other parameters to ``io.open()``:
-
-``io.open(file, mode='r', buffering=-1, encoding=None, errors=None, newline=None, closefd=True)``
-
-* ``file`` is generally a file name or full path
-
-* ``mode`` is the mode for opening: 'r', 'w', etc.
-
-* ``buffering`` controls the buffering mode (0 for no buffering)
-
-* ``encoding`` sets the unicode encoding -- only for text files -- when set,
-  you can ONLY write unicode object to the file.
-
-* ``errors`` sets the encoding error mode: 'strict', 'ignore', 'replace',...
-
-* ``newline`` controls Universal Newline mode: lets you write DOS-type files on
-  \*nix, for instance (text mode only).
-
-* ``closedfd`` controls close()  behavior if a file descriptor, rather than a
-  name is passed in (advanced usage!)
-
-(https://docs.python.org/2/library/io.html?highlight=io.open#io.open)
-
-
-File Reading
-------------
-
-Reading part of a file
-
-.. code-block:: python
-
-    header_size = 4096
-    f = open('secrets.txt')
-    secret_header = f.read(header_size)
-    secret_rest = f.read()
-    f.close()
-
-.. nextslide::
-
-
-Common Idioms
-
-.. code-block:: python
-
-    for line in io.open('secrets.txt'):
-        print line
-
-.. rst-class:: build
-.. container::
-
-    (the file object is an iterator!)
-
-    .. code-block:: python
-
-        f = io.open('secrets.txt')
-        while True:
-            line = f.readline()
-            if not line:
-                break
-            do_something_with_line()
-
-
-File Writing
-------------
-
-.. code-block:: python
-
-    outfile = io.open('output.txt', 'w')
-    for i in range(10):
-        outfile.write("this is line: %i\n"%i)
-
-
-File Methods
-------------
-
-Commonly Used Methods
-
-.. code-block:: python
-
-    f.read() f.readline() f.readlines()
-
-    f.write(str) f.writelines(seq)
-
-    f.seek(offset) f.tell()
-
-    f.flush()
-
-    f.close()
-
-
-File Like Objects
------------------
-
-
-Many classes implement the file interface:
-
-.. rst-class:: build
-
-* loggers
-* ``sys.stdout``
-* ``urllib.open()``
-* pipes, subprocesses
-* StringIO
-
-https://docs.python.org/2/library/stdtypes.html#file-objects
-
-StringIO
---------
-
-.. code-block:: python
-
-    In [417]: import StringIO
-    In [420]: f = StringIO.StringIO()
-    In [421]: f.write(u"somestuff")
-    In [422]: f.seek(0)
-    In [423]: f.read()
-    Out[423]: 'somestuff'
-
-(handy for testing file handling code...)
-
-
-Paths and Directories
-=====================
-
-Paths
------
-
-Paths are generally handled with simple strings (or Unicode strings)
-
-Relative paths:
-
-.. code-block:: python
-
-    u'secret.txt'
-    u'./secret.txt'
-
-Absolute paths:
-
-.. code-block:: python
-
-    u'/home/chris/secret.txt'
-
-
-Either work with ``open()`` , etc.
-
-(working directory only makes sense with command-line programs...)
-
-os module
-----------
-
-.. code-block:: python
-
-    os.getcwd() -- os.getcwdu() (u for Unicode)
-    chdir(path)
-    os.path.abspath()
-    os.path.relpath()￼
-
-
-.. nextslide:: os.path module
-
-.. code-block:: python
-
-    os.path.split()
-    os.path.splitext()
-    os.path.basename()
-    os.path.dirname()
-    os.path.join()
-
-
-(all platform independent)
-
-.. nextslide:: directories
-
-.. code-block:: python
-
-    os.listdir()
-    os.mkdir()
-    os.walk()
-
-(higher level stuff in ``shutil``  module)
-
-pathlib
--------
-
-``pathlib`` is a new package for handling paths in an OO way:
-
-http://pathlib.readthedocs.org/en/pep428/
-
-It is now part of the Python3 standard library, and has been back-ported for use with Python2:
-
-.. code-block:: bash
-
-    $ pip install pathlib
-
-.. nextslide::
-
-All the stuff in os.path and more:
-
-.. code-block:: ipython
-
-    In [64]: import pathlib
-    In [65]: pth = pathlib.Path('./')
-    In [66]: pth.is_dir()
-    Out[66]: True
-    In [67]: pth.absolute()
-    Out[67]: PosixPath('/Users/Chris/PythonStuff/CodeFellowsClass/sea-f2-python-sept14/Examples/Session04')
-    In [68]: for f in pth.iterdir():
-                 print f
-    junk2.txt
-    junkfile.txt
-    ...
-
-
-Homework
-=========
-
-Assignments:
--------------
-
-* Task 9: dict/sets lab
-* Task 10: Exceptions
-* Task 11: Mailroom Madness
-* Task 12: Investigate Session 5
-
-
-Task 9: Dictionaries and Sets
----------------------
-
-In your student folder, create a subdirectory called ``session04``.
-Create a new branch called ``task9`` and switch to it (``git checkout task9``).
-
-Within the ``session04`` subdirectory, create a new file called ``dict_lab.py``.
-
-Add the file to your clone of the repository and commit changes frequently
-while working on the following tasks. When you are done, push your changes to
-GitHub and issue a pull request.
-
-1.
-
-* Create a dictionary containing "name", "city", and "cake" for "Chris" from
-  "Seattle" who likes "Chocolate".
-
-* Display the dictionary.
-
-* Delete the entry for "cake".
-
-* Display the dictionary.
-
-* Add an entry for "fruit" with "Mango" and display the dictionary.
-
-  - Display the dictionary keys.
-  - Display the dictionary values.
-  - Display whether or not "cake" is a key in the dictionary (i.e. False) (now).
-  - Display whether or not "Mango" is a value in the dictionary.
-
-.. nextslide::
-
-2.
-
-* Using the dict constructor and zip, build a dictionary of numbers from zero
-  to fifteen and the hexadecimal equivalent (string is fine).
-
-3.
-
-* Using the dictionary from item 1: Make a dictionary using the same keys but
-  with the number of 'a's in each value.
-
-.. nextslide:: sets
-
-4.
-
-* Create sets s2, s3 and s4 that contain numbers from zero through twenty,
-  divisible 2, 3 and 4.
-
-* Display the sets.
-
-* Display if s3 is a subset of s2 (False)
-
-* and if s4 is a subset of s2 (True).
-
-5.
-
-* Create a set with the letters in 'Python' and add 'i' to the set.
-
-* Create a frozenset with the letters in 'marathon'
-
-* display the union and intersection of the two sets.
-
-
-
-Task 10: Exceptions
--------------------
-
-* Improving raw_input :
-  - Create a new file: safe_input.py -- add it to your repo, and submit a pull
-    request. Make sure to make frequent commits with good commit messages.
-
-* The raw_input() function can generate two exceptions:
-  - EOFError or end-of-file (EOF)
-  - KeyboardInterrupt  or canceled input.
-  - Create a wrapper function, perhaps safe_input() that returns 'None' rather
-    than raising these exceptions.
-
-* Note:
-  - ^C causes a KeyboardInterrupt Error
-  - ^D (^Z on Windows) causes an End Of File Error.
-  - ^ is the Control character
-
-* The next step should be done in your mailroom.py file:
-  - Update your mailroom.py program to use exceptions (and BAFP) to handle
-    malformed numeric input (and other malformed input)
-  - Make sure to have your commit comment reflect that you've added this
-    feature
-
-
-
-
-Task 11: Mailroom Madness
--------------------------
-
-* Using all you've learned so far, complete your mailroom program according to
-  the pseudocode and flow chart you created last session.
-
-  - use dicts where appropriate
-  - see if you can use a dict to switch between the users selections
-  - Try to use a dict and the .format() method to do the letter as one big
-    template -- rather than building up a big string in parts.
-  - For extra fun, see if you can use a file to preserve the donation list and
-    changes made to it while the program is running.
-
-Task 12: Investigate Session 5
-------------------------------
-
-Read through the Session 05 slides.
-
-http://codefellows.github.io/sea-c34-python/session05.html
-
-There are three sections. For each one, come up with three questions each.
-
-* Arguments (3 questions)
-* Comprehensions (3 questions)
-* Lambdas and Functional Programming (3 questions)
-
-Write some
-Python code to help you answer them, one function per question.
-
-For each function, write a good ``docstring`` describing what
-question you are trying to answer.
-
-Put the functions in four separate modules (files) called
-`arguments.py`, `comprehensions.py`, `functional.py` in the
-``session05`` subdirectory of your student directory.
-
-.. nextslide::
-
-That is, you should have nine questions, and nine functions, total,
-spread out across three files.
-
-Use everything you've learned
-so far as needed (including lists, tuples, slicing, iteration, functions, booleans, printing, modules, assertions, dictionaries,
-sets, exceptions, file reading/writing, and paths).
-
-Create a branch in your local repo called `task12` and switch to it (`git checkout task12`).
-
-Add your files
-to that branch, commit and push, then submit a pull request to
-the main class repo.
-
-Finally, submit your assignment in Canvas by giving the URL of the pull request.

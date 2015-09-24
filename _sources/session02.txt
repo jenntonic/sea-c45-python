@@ -19,23 +19,13 @@ Review of Previous Session
 .. rst-class:: build
 
   * Values and Types
-  * Expressions
+  * REPL
+  * Expressions and Statements
+  * `dir` and `help`
+  * Unit tests
+  * `NameError`, `TypeError`, `AttributeError`
   * Intro to functions
 
-Clarifications
-==============
-
-* Python Development Accelerator
-* Blank lines don't always end a block
-
-Review of Previous Session
---------------------------
-
-.. rst-class:: build
-
-  * Values and Types
-  * Expressions
-  * Intro to functions
 
 Homework Review
 ---------------
@@ -52,16 +42,6 @@ Today's Plan
 * Booleans
 * Modules
 
-For Each Section
-----------------
-
-* Read through the puzzle for that section.
-* Pick a partner. Describe what your goal is.
-* Read through the section. Try typing any code you see in `ipython` or `python`
-* Come up with three questions as you are reading with your partner.
-* We'll come around and help you.
-* We'll regroup and you'll teach me the slides.
-* We'll solve the puzzle together.
 
 Git Work
 ========
@@ -70,20 +50,20 @@ Git Work
 
 Let's get to know your fellow students!
 
-Git Work Puzzle
+Python Speed-Dating
 ------------------------
-We want to pull your classmates "Gitting to Know You"
-introductions from the (upstream) class repo.
 
-Remember, do these steps:
+Stand up and walk around.
 
-* Read through the puzzle for that section.
-* Pick a partner, describe what your goal is.
-* Read through the slides. Try typing any code you see in `ipython` or `python`
-* Come up with three questions as you are reading with your partner.
-* We'll come around and help you.
-* We'll regroup and you'll teach me the slides.
-* We'll solve the puzzle together.
+Choose a partner who has done HW 03.
+Introduce yourselves!
+
+If you've done HW 03 "Gitting to Know You",
+share the URL of your pull request with your partner.
+
+If you haven't done it yet, have your partner walk
+through their example with you, and
+complete it in class.
 
 Working with an Upstream
 ------------------------
@@ -91,11 +71,10 @@ Working with an Upstream
 You've created a fork of the class repository from the ``codefellows`` account
 on GitHub.
 
-You've pushed your own changes to that fork, and then issued pull requests to
-have that worked merged back to the ``codefellows`` original.
+You are creating branches and pull requests on your forked repo.
 
-You want to keep your fork up-to-date with that original copy as the class goes
-forward.
+You won't ever be *pushing* to the original class repo,
+but you want to *pull* changes from it.
 
 To do this, you use the git concept of an **upstream** repository.
 
@@ -112,8 +91,8 @@ Cloned repositories get an *origin* remote for free:
 .. code-block:: bash
 
     $ git remote -v
-    origin  https://github.com/cewing/sea-c34-python.git (fetch)
-    origin  https://github.com/cewing/sea-c34-python.git (push)
+    origin  https://github.com/cewing/sea-c45-python.git (fetch)
+    origin  https://github.com/cewing/sea-c45-python.git (push)
 
 This shows that the local repo on my machine *originated* from the one in my gitHub account (the one it was cloned from)
 
@@ -133,10 +112,10 @@ to the original copy of the material in the ``codefellows`` account.
     $ git remote add upstream https://github.com/codefellows/sea-c34-python.git
 
     $ git remote -v
-    origin  https://github.com/cewing/sea-c34-python.git (fetch)
-    origin  https://github.com/cewing/sea-c34-python.git (push)
-    upstream  https://github.com/codefellows/sea-c34-python.git (fetch)
-    upstream  https://github.com/codefellows/sea-c34-python.git (push)
+    origin  https://github.com/cewing/sea-c45-python.git (fetch)
+    origin  https://github.com/cewing/sea-c45-python.git (push)
+    upstream  https://github.com/codefellows/sea-c45-python.git (fetch)
+    upstream  https://github.com/codefellows/sea-c45-python.git (push)
 
 .. nextslide:: Fetching Everything.
 
@@ -232,13 +211,11 @@ You can incorporate this into your daily workflow: ::
     $ git push
     [make a pull request]
 
-Git Work Puzzle Solved!
-------------------------
-We wanted to pull your classmates "Gitting to Know You"
-introductions from the (upstream) class repo.
+Python Tutor
+=====================
+Open your browser to
 
-When you make that happen, congratulations! Find your partner's
-introduction and read them to each other.
+http://pythontutor.com
 
 Some Needed Plumbing
 =====================
@@ -402,7 +379,7 @@ Functions Puzzle
 ---------
 
 In your local repo, after you've updated from upstream,
-go to `session02` and find the file `stackoverflow.py`.
+find the file `stackoverflow.py`.
 
 In it, you will find a function that calls itself.
 
@@ -411,17 +388,6 @@ In it, you will find a function that calls itself.
 * How can you count the number of times a function can call itself?
 * Modify the program to implement your solution.
 
-.. nextslide::
-
-Remember, Do These Steps
-
-* Read through the puzzle for that section.
-* Pick a partner. Describe what your goal is.
-* Read through the section `Functions`. Try typing any code you see in `ipython` or `python`
-* Come up with three questions as you are reading with your partner.
-* We'll come around and help you.
-* We'll regroup and you'll teach me the slides.
-* We'll solve the puzzle together.
 
 
 Review
